@@ -21,7 +21,7 @@ BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 
 # *HACK* export oracledb required env vars
 ORACLE_HOME="/app/vendor/oracle_instantclient"
-export LD_LIB_DIR="$ORACLE_HOME"
+export LD_LIBRARY_PATH="$ORACLE_HOME"
 export OCI_LIB_DIR="$ORACLE_HOME"
 export OCI_INC_DIR="$ORACLE_HOME/sdk/include"
 
