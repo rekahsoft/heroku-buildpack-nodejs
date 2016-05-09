@@ -19,7 +19,16 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 
-echo "BPDIR is \"$BP_DIR\""
+# *HACK* export oracledb required env vars
+ORACLE_HOME="/app/vendor/oracle_instantclient"
+export LD_LIB_DIR="$ORACLE_HOME"
+export OCI_LIB_DIR="$ORACLE_HOME"
+export OCI_INC_DIR="$ORACLE_HOME/sdk/include"
+
+echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
+echo "OCI_LIB_DIR: $OCI_LIB_DIR"
+echo "OCI_INC_DIR: $OCI_INC_DIR"
+# *ENDHACK*
 
 mkdir -p "$BUILD_DIR/.heroku/node/"
 cd $BUILD_DIR
