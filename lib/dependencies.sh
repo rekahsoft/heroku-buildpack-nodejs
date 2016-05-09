@@ -11,7 +11,7 @@ install_node_modules() {
   local build_dir=${1:-}
 
   # SHOW ENV
-  echo "Install ENV:"
+  echo "INSTALL ENV:"
   printenv
 
 
@@ -35,7 +35,7 @@ rebuild_node_modules() {
   local build_dir=${1:-}
 
   # SHOW ENV
-  echo "Install ENV:"
+  echo "REINSTALL ENV:"
   printenv
 
   if [ -e $build_dir/package.json ]; then

@@ -20,7 +20,7 @@ ENV_DIR=${3:-}
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 
 # SHOW ENV
-echo "Install ENV:"
+echo "START ENV:"
 printenv
 
 # Show oracle environment variables
