@@ -10,6 +10,11 @@ run_if_present() {
 install_node_modules() {
   local build_dir=${1:-}
 
+  # SHOW ENV
+  echo "Install ENV:"
+  printenv
+
+
   if [ -e $build_dir/package.json ]; then
     cd $build_dir
 
@@ -28,6 +33,10 @@ install_node_modules() {
 
 rebuild_node_modules() {
   local build_dir=${1:-}
+
+  # SHOW ENV
+  echo "Install ENV:"
+  printenv
 
   if [ -e $build_dir/package.json ]; then
     cd $build_dir
